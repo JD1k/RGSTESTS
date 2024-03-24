@@ -17,7 +17,7 @@ import static services.data.references.Urls.OSAGO_SBERBANK;
 public class Login {
 
     @Test
-    public static void doLogin (){
+    public static void doLogin () throws InterruptedException {
 
         //sleep(60000);
         //Configuration.pageLoadTimeout = 60000;
@@ -31,6 +31,10 @@ public class Login {
         assertEquals($x("//h2[text()='Калькулятор ОСАГО']"),$x("//h2[text()='Калькулятор ОСАГО']"),"Вы зашли не туда");
         sleep(2000);
 
+        //PageElements.tsCategory.click();
+        PageElements.Type.click();
+        sleep(1500);
+        //Thread.sleep(2000);
 
 
     }
