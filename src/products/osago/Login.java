@@ -4,8 +4,11 @@ package products.osago;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.drivercommands.WebDriverWrapper;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.Objects;
 
 
@@ -17,10 +20,10 @@ import static services.data.references.Urls.OSAGO_SBERBANK;
 public class Login {
 
     @Test
-    public static void doLogin () throws InterruptedException {
+    public static void doLogin () {
 
         //sleep(60000);
-        //Configuration.pageLoadTimeout = 60000;
+        Configuration.pageLoadTimeout = 8000;
 
         open(OSAGO_SBERBANK);
         sleep(1500);
@@ -31,9 +34,37 @@ public class Login {
         assertEquals($x("//h2[text()='Калькулятор ОСАГО']"),$x("//h2[text()='Калькулятор ОСАГО']"),"Вы зашли не туда");
         sleep(2000);
 
-        //PageElements.tsCategory.click();
+        switchTo().frame($x("//*[@id='RESOLUTE_INSURANCE']"));
+
+        //Данные ТС
+        PageElements.tsCategory.click();
+        sleep(2000);
+
+        PageElements.enginePower.setValue("71").shouldBe(Condition.visible,Duration.ofSeconds(5)).pressEnter();
+
         PageElements.Type.click();
-        sleep(1500);
+        //sleep(2000);
+        PageElements.tsUser.click();
+        //PageElements.Marka.shouldBe(Condition.visible).sendKeys("ВАЗ");
+        PageElements.tsYear.setValue("2004").shouldBe(Condition.visible).pressEnter();
+        //PageElements.tsModel.setValue("2104").shouldBe(Condition.visible).pressEnter();
+        PageElements.tsVin.setValue("XTK21043040012799").shouldBe(Condition.visible).pressEnter();
+        PageElements.tsNumber.setValue("В903ОР97").shouldBe(Condition.visible).pressEnter();
+        //Данные СТС
+        PageElements.stsSeries.setValue("4822").shouldBe(Condition.visible).pressEnter();
+        PageElements.stsNumber.setValue("556562").shouldBe(Condition.visible).pressEnter();
+        PageElements.stsData.setValue("13.01.2015").shouldBe(Condition.visible).pressEnter();
+        //Перидо страхования
+        PageElements.insurancePeriod.click();
+        PageElements.inBenning.setValue("02.04.2024").shouldBe(Condition.visible).pressEnter();
+
+        // PageElements.resume.click();
+
+
+
+
+
+        //PageElements.tsCategory.click();
         //Thread.sleep(2000);
 
 
