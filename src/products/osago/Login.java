@@ -43,20 +43,30 @@ public class Login {
         PageElements.enginePower.setValue("71").shouldBe(Condition.visible,Duration.ofSeconds(5)).pressEnter();
 
         PageElements.Type.click();
-        //sleep(2000);
+        sleep(1500);
         PageElements.tsUser.click();
-        //PageElements.Marka.shouldBe(Condition.visible).sendKeys("ВАЗ");
+        actions().moveToElement(PageElements.Marka).click().sendKeys(PageElements.NAME_MARK).click().pause(2000).build().perform();
+        sleep(1500);
         PageElements.tsYear.setValue("2004").shouldBe(Condition.visible).pressEnter();
+        sleep(1500);
         //PageElements.tsModel.setValue("2104").shouldBe(Condition.visible).pressEnter();
+        actions().moveToElement(PageElements.tsModel).click().sendKeys("2104").click().pause(2000).build().perform();
+        //sleep(1500);
         PageElements.tsVin.setValue("XTK21043040012799").shouldBe(Condition.visible).pressEnter();
         PageElements.tsNumber.setValue("В903ОР97").shouldBe(Condition.visible).pressEnter();
+        sleep(1500);
         //Данные СТС
         PageElements.stsSeries.setValue("4822").shouldBe(Condition.visible).pressEnter();
         PageElements.stsNumber.setValue("556562").shouldBe(Condition.visible).pressEnter();
         PageElements.stsData.setValue("13.01.2015").shouldBe(Condition.visible).pressEnter();
+        sleep(1500);
         //Перидо страхования
         PageElements.insurancePeriod.click();
-        PageElements.inBenning.setValue("02.04.2024").shouldBe(Condition.visible).pressEnter();
+        PageElements.inBenning.setValue("06.04.2024").shouldBe(Condition.visible).pressEnter();
+        //PageElements.inBefore.setValue("").shouldBe(Condition.visible).pressEnter();
+        sleep(1500);
+
+
 
         // PageElements.resume.click();
 

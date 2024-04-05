@@ -9,6 +9,8 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class PageElements {
 
+    public static String NAME_MARK = "ВАЗ";
+
     public static SelenideElement test = $x("//span[text()='Рассчитать цену'] ");
     public static SelenideElement okno = $x("//div[@class='SelectFieldInner__indicators css-1wy0on6']//div");
     // Транспортное средство
