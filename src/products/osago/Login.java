@@ -62,7 +62,7 @@ public class Login {
         sleep(500);
 
         PageElements.Marka.click();
-        actions().moveToElement(PageElements.Marka).sendKeys(PageElements.NAME_MARK).pause(500).sendKeys(Keys.chord(Keys.ENTER)).pause(500).build().perform();
+        actions().moveToElement(PageElements.Marka).sendKeys("ВА").pause(500).sendKeys(Keys.chord(Keys.ENTER)).pause(500).build().perform();
         sleep(500);
 
         PageElements.tsYear.setValue("2004").shouldBe(Condition.visible).pressEnter();
