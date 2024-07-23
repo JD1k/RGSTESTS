@@ -37,4 +37,20 @@ public class UiHelpers {
                 .pause(HALF_SECOND)
                 .build().perform();
     }
+
+    public static void addressAction (SelenideElement element, String keys){
+
+        sleep(HALF_SECOND);
+        element.click();
+        actions().moveToElement(element).sendKeys(keys).pause(HALF_SECOND).sendKeys(Keys.DOWN,Keys.ENTER).pause(HALF_SECOND).build().perform();
+    }
+
+    public static void Fill(SelenideElement element, String keys){
+        element.click();
+        sleep(HALF_SECOND);
+        element.clear();
+        sleep(HALF_SECOND);
+        element.setValue(keys).pressEnter();
+        sleep(HALF_SECOND);
+    }
 }

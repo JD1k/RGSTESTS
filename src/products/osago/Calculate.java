@@ -8,6 +8,8 @@ import services.data.references.BeforeTests;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 
 import static com.codeborne.selenide.Selenide.*;
@@ -75,7 +77,7 @@ public class Calculate extends BeforeTests {
         // ФИО Водителя
         fillInField(SURNAME,"Макаров");
         fillInField(NAME,"Максим");
-        fillInField(MIDDLE_NAM,"Олеговчи");
+        fillInField(MIDDLE_NAM,"Олегович");
         fillInField(DATE_OF_BRITH,"29.06.1999");
 
         //Водительское удостоверение
@@ -98,11 +100,19 @@ public class Calculate extends BeforeTests {
      //actions().moveToElement(PageElements.Addres).sendKeys("Липецкая обл, Липецкий р-н, деревня Копцевы Хутора, ул Котовского, д 9").pause(500).sendKeys(Keys.chord(Keys.ENTER)).pause(500).build().perform();
         clickElement(PASSPORT);
         clickElement(PASSPORT_RF);
-        fillInField(SERIES_PASSPORT,"4219");
-        fillInField(NUMBER_PASSPORT,"207820");
-        fillInDropdownField(ADDRES,"Липецкая обл, Липецкий р-н, деревня Копцевы Хутора, ул Котовского, д 9");
+        //Fill(SERIES_PASSPORT,"4219");
+        //Fill(NUMBER_PASSPORT,"207820");
+
+        //fillInField(SERIES_PASSPORT,"4219");
+        //fillInField(NUMBER_PASSPORT,"207820");
+        Fill(PHONE_NUMBER,"9155514296");
+
+
+        fillInField(ADDRES,"Липецкая обл, Липецкий р-н, деревня Копцевы Хутора, ул Котовского, д 9");
+        REG.click();
+
         fillInField(FLAT,"21");
-        fillInField(INDEX,"398501");
+
         clickElement(RESS);
 
 

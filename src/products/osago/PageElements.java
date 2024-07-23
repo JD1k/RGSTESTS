@@ -1,5 +1,6 @@
 package products.osago;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.selector.WithTextCaseInsensitive;
 
@@ -7,8 +8,7 @@ import com.codeborne.selenide.selector.WithTextCaseInsensitive;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 import static services.data.references.Constants.COOKE;
 import static services.data.references.Constants.PERSONAL;
 
@@ -71,18 +71,26 @@ public class PageElements {
     protected static final SelenideElement PASSPORT_RF = $x("//div[text()='Паспорт гражданина РФ']");
     protected static final SelenideElement SERIES_PASSPORT = $x("//*[@class='input-group']/input[@placeholder='Серия']");
     protected static final SelenideElement NUMBER_PASSPORT = $x("//*[@class='input-group']/input[@placeholder='Номер']");
+    protected static final SelenideElement PHONE_NUMBER = $x("//div[@class='input-group']/input[@placeholder='+7(___)___-__-__']");
     protected static final SelenideElement ADDRES = $x("//input[@placeholder='Адрес регистрации']");
+    protected static final SelenideElement REG = $x("//*[@role='menu']/div[@role='menuitem'][1]");
     protected static final SelenideElement FLAT = $x("//input[@placeholder='Квартира']");
     protected static final SelenideElement INDEX = $x("//input[@placeholder='Индекс']");
 
     //Собственник
-    protected static final SelenideElement CHECK = $(new WithTextCaseInsensitive("Собственник"));
-    protected static final SelenideElement POLICYHOLDER = $(new WithTextCaseInsensitive("Страхователь"));
+    protected static final SelenideElement CHECK = $(new WithTextCaseInsensitive("Собственник и страхователь"));
+    protected static final SelenideElement CHICK = $x("//input[@type='checkbox'][1]");
+    protected static final SelenideElement CHEC = $x("//div[@class='custom-checkbox custom-control']/input[@name='properties.accept']");
+    protected static final SelenideElement POLICYHOLDER = $(new WithTextCaseInsensitive("Страхователь подтверждает"));
     protected static final SelenideElement CALCULATE = $x("//*[@class='btn btn-secondary btn-block']");
 
     // Переход на следующую вкладку
     protected static final SelenideElement RESUME = $x("//*[@class='text-right']/button");
 
     protected static final SelenideElement RESS = $x("//*[@class='btn btn-secondary btn-block']");
+
+    //ElementCollections
+    protected static ElementsCollection REGISTR = $$x("//*[@role='menu']");
+    //*[@role='menu']/div[@role]
 
 }
