@@ -1,6 +1,7 @@
 package products.osago;
 
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.testng.annotations.Test;
 import services.data.references.BeforeTests;
@@ -30,13 +31,23 @@ public class Calculate extends BeforeTests {
         open(OSAGO_SBERBANK);
         sleep(ONE_SECOND);
 
-        clickElement(COOKE_CLICK);
+        sleep(ONE_SECOND);
+        //clickElement(COOKE_CLICK);
+        //clickEment1(COOKE_CLICK);
         //$("title").shouldHave(Condition.attribute("text", "ОСАГО онлайн: калькулятор еОСАГО"));
      assertEquals(title(),TITLE,WRONG);
+
+        sleep(ONE_SECOND);
+        COOKE_CLICK.shouldBe(Condition.interactable);
+        clickEment1(COOKE_CLICK);
+        /*if(COOKE_CLICK.isEnabled()){
+            COOKE_CLICK.click();
+        }else throw new RuntimeException("Элемент все еще отключен!");*/
      clickElement(PRICE_CALCULATION);
         //assertEquals($x("//h2[text()='Калькулятор ОСАГО']"),$x("//h2[text()='Калькулятор ОСАГО']"),"Вы зашли не туда");
        switchTo().frame(FRAME);
        sleep(HALF_SECOND);
+
 
        //Данные тс
      clickElement(TYPE);

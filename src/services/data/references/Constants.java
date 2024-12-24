@@ -5,14 +5,14 @@ public class Constants {
 
     }
     // Секунды
-    public static int ONE_SECOND = 1000;
-    public static int HALF_SECOND = 500;
+    public static final int ONE_SECOND = 1000;
+    public static final int HALF_SECOND = 500;
 
-    public static String COOKE = "Понятно";
-    public static String PERSONAL = "Личная";
-    public static String TO_CENTER = "{behavior: 'auto', block: 'center'}";
-    public static String TITLE = "ОСАГО онлайн: калькулятор еОСАГО";
-    public static String WRONG = "Зашли не туда";
+    public static final String COOKE = "Понятно";
+    public static final String PERSONAL = "Личная";
+    public static final String TO_CENTER = "{behavior: 'auto', block: 'center'}";
+    public static final String TITLE = "ОСАГО⚡ — купить онлайн страховку ОСАГО на автомобиль в Росгосстрах";
+    public static final String WRONG = "Зашли не туда";
 
 
 }

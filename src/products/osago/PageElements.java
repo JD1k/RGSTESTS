@@ -4,10 +4,6 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.selector.WithTextCaseInsensitive;
 
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import static com.codeborne.selenide.Selenide.*;
 import static services.data.references.Constants.COOKE;
 import static services.data.references.Constants.PERSONAL;
@@ -21,8 +17,10 @@ public class PageElements {
     //protected static final String NAME_MARK = "ВАЗ";
     protected static final SelenideElement FRAME = $x("//*[@id='RESOLUTE_INSURANCE']");
 
-    protected static final SelenideElement PRICE_CALCULATION = $(new WithTextCaseInsensitive("Рассчитать"));
-    protected static final SelenideElement COOKE_CLICK = $(new WithTextCaseInsensitive(COOKE));
+    protected static final SelenideElement PRICE_CALCULATION = $x("//span[text()='Купить']");
+    protected static final SelenideElement COOKE_CLICK = $x("//*[@class='cookie block--cookie']/button[@class='btn--text'] ");
+    //$(new WithTextCaseInsensitive("Купить"));
+    //$(new WithTextCaseInsensitive("Понятно"))
 
     // Транспортное средство
     protected static final SelenideElement TYPE =$x("//button[text()='Нет номера']");
@@ -81,7 +79,7 @@ public class PageElements {
     protected static final SelenideElement CHECK = $(new WithTextCaseInsensitive("Собственник и страхователь"));
     protected static final SelenideElement CHICK = $x("//input[@type='checkbox'][1]");
     protected static final SelenideElement CHEC = $x("//div[@class='custom-checkbox custom-control']/input[@name='properties.accept']");
-    protected static final SelenideElement POLICYHOLDER = $(new WithTextCaseInsensitive("Страхователь подтверждает"));
+    protected static final SelenideElement POLICYHOLDER = $(new WithTextCaseInsensitive("Страхователь подтверждает, что все данные указаны им верно,"));
     protected static final SelenideElement CALCULATE = $x("//*[@class='btn btn-secondary btn-block']");
 
     // Переход на следующую вкладку

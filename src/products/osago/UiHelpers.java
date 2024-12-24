@@ -1,12 +1,14 @@
 package products.osago;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
-import static com.codeborne.selenide.Selenide.actions;
-import static com.codeborne.selenide.Selenide.sleep;
-import static services.data.references.Constants.HALF_SECOND;
-import static services.data.references.Constants.TO_CENTER;
+import java.time.Duration;
+
+import static com.codeborne.selenide.Selenide.*;
+import static services.data.references.Constants.*;
 
 public class UiHelpers {
     private UiHelpers(){
@@ -17,6 +19,20 @@ public class UiHelpers {
         element.click();
         sleep(HALF_SECOND);
     }
+
+     public static void clickEment1 (SelenideElement element){
+        sleep(ONE_SECOND);
+        element.shouldBe(Condition.interactable).shouldBe(Condition.enabled).click();
+        sleep(HALF_SECOND);
+         /*WebElement element1 = element;
+         executeJavaScript("arguments[0].click();", element);*/
+    }
+
+    public static void wait(SelenideElement element){
+        sleep(ONE_SECOND);
+        element.shouldBe(Condition.interactable);
+    }
+
 
     public static void fillInField (SelenideElement element, String keys){
         element.scrollIntoView(TO_CENTER);
